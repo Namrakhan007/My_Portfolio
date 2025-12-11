@@ -1,0 +1,219 @@
+
+/************ Dark Theme ************/
+body.dark {
+  background-color: #212121 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark .banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/pattern.jpeg');
+  background-color: #212121;
+  background-blend-mode: normal;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+body.dark .banner .tagline {
+  background: linear-gradient(90.21deg, #4a4a4a -5.91%, #2c2c2c 111.58%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+body.dark .banner h1 {
+  color: rgb(255, 235, 59) !important;
+  text-shadow: 0 0 15px rgba(253, 253, 137, 0.4);
+}
+
+body.dark .banner p {
+  color: #b0b0b0;
+}
+
+body.dark .resume-title {
+  color: rgb(255, 235, 59) !important;
+  text-shadow: 0 0 10px rgba(253, 253, 137, 0.3);
+}
+
+body.dark .skill {
+  background: linear-gradient(90.21deg, #2c2c2c -5.91%, #1a1a1a 111.58%);
+}
+
+body.dark .skill-bx {
+  background-color: #2c2c2c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+body.dark .skill-title,
+body.dark .skill-subtitle,
+body.dark .skill-name {
+  color: #f1f1f1;
+}
+
+body.dark .skill .skill-desc {
+  color: #b0b0b0;
+}
+
+body.dark .skill .skill-desc:hover {
+  color: #fff;
+}
+
+body.dark .experience {
+  background-color: #212121;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+}
+
+body.dark .experience h2 {
+  color: #f1f1f1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark .experience-item {
+  background: #2c2c2c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .experience-item.expanded {
+  background: #2c2c2c;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+body.dark .experience-header h3 {
+  color: #f1f1f1;
+}
+
+body.dark .toggle-icon {
+  color: #f1f1f1;
+}
+
+body.dark .experience-item h4 {
+  color: #ddd;
+}
+
+body.dark .duration-badge {
+  background: #444;
+  color: #fff;
+}
+
+body.dark .description-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .description-box p,
+body.dark .description-box li {
+  color: #ccc;
+}
+
+body.dark .education {
+  background-color: #212121;
+}
+
+body.dark .education h2 {
+  color: #f1f1f1;
+}
+
+body.dark .education-item {
+  background: #2c2c2c;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .gpa-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark .gpa-box p {
+  color: #f1f1f1;
+}
+
+body.dark .project {
+  background-color: #212121;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 15%, rgba(255, 255, 255, 0.02) 25%, transparent 50%);
+}
+
+body.dark .project h2 {
+  color: #f1f1f1;
+}
+
+body.dark .project p {
+  color: #ccc;
+}
+
+body.dark .project .nav.nav-pills {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .contact {
+  background: linear-gradient(90.21deg, #2c2c2c -5.91%, #1a1a1a 111.58%);
+}
+
+body.dark .contact h2 {
+  color: #f1f1f1;
+}
+
+body.dark .contact form input,
+body.dark .contact form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+body.dark .contact form input:focus,
+body.dark .contact form textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+body.dark .contact form button {
+  background: linear-gradient(90.21deg, #fdfd89 -5.91%, #f0db3c 111.58%);
+  color: #121212;
+}
+
+body.dark .contact form button::before {
+  background: #d4af37;
+}
+
+body.dark .contact form button:hover {
+  color: #121212;
+}
+
+body.dark .newsletter-bx {
+  background: #2c2c2c;
+  color: #fff;
+}
+
+body.dark .new-email-bx {
+  background: #1a1a1a;
+}
+
+body.dark .new-email-bx::after {
+  background: #1a1a1a;
+}
+
+body.dark .footer {
+  background-image: none;
+  background-color: #212121;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin-left: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}

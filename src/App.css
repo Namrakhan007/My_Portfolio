@@ -329,38 +329,121 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
+.resume-title {
+  color: rgb(83, 74, 29);
+}
+
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   background: linear-gradient(90.21deg, #f9edad -5.91%, #aa9635 111.58%);
   position: relative;
 }
 .skill-bx {
-  background: #f7f75e;
-  background-blend-mode: multiply;
-
-  border-radius: 64px;
+  background-color: rgba(255, 253, 240, 0.95); /* Creamier white */
+  border-radius: 50px;
   text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px; 
-  background-blend-mode: multiply;
-  background-size: 64px 64px, 64px 64px;
-  background-color: #edf0e2;
-  background-image: 
-  linear-gradient(30deg, rgba(231, 224, 145, 0.7) 12%, transparent 12.5%, transparent 87%, rgba(231, 224, 145, 0.7) 87.5%, rgba(99, 98, 93, 0.7)),
-  linear-gradient(150deg, rgba(138, 137, 131, 0.7) 12%, transparent 12.5%, transparent 87%, rgba(94, 93, 86, 0.7) 87.5%, rgba(174, 171, 134, 0.7)),
-  linear-gradient(90deg, rgba(231, 224, 145, 0.4) 25%, transparent 25%, transparent 75%, rgba(231, 224, 145, 0.4) 75%, rgba(231, 224, 145, 0.4));
-background-size: 60px 105px;background-blend-mode: multiply;
-background-color: rgba(240, 234, 194, 0.26);
+  padding: 80px 60px;
+  margin-top: -60px;
+  /* Elegant Art Deco Fan Pattern */
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4c888' stroke-width='1.5' stroke-opacity='0.35'%3E%3Cpath d='M26 26c0-14.359-11.641-26-26-26S-26 11.641-26 26'/%3E%3Cpath d='M26 26c0-14.359 11.641-26 26-26s26 11.641 26 26'/%3E%3Cpath d='M26 0C11.641 0 0 11.641 0 26s11.641 26 26 26 26-11.641 26-26S40.359 0 26 0'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
 }
 
-.project img {
-  cursor: pointer;
+.skill-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #2e2601;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.skill .skill-desc {
+  color: #5a5025;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  line-height: 1.6em;
+  margin: 0 auto 60px auto;
+  max-width: 700px;
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.skill .skill-desc:hover {
+  transform: scale(1.1);
+  color: #2e2601;
+}
+
+.skill-subtitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2e2601;
+  margin: 40px 0 30px 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.skill-subtitle::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background: #d4c888;
+  bottom: 0;
+  left: 20%;
+  border-radius: 2px;
+}
+
+.skill-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   transition: transform 0.3s ease;
 }
 
-.project img:hover {
-  transform: scale(1.05); /* Adds a zoom effect on hover */
+.skill-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e2601;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
+
+.circle-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: transparent; /* Initial transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Subtle shadow for elegance */
+  transition: all 0.3s ease;
+}
+
+.inner-circle {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: #fffce5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2e2601;
+  box-shadow: inset 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .skill h2 {
@@ -709,3 +792,298 @@ background-color: rgba(240, 234, 194, 0.26);
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+
+/************ Education Css ************/
+.education {
+  padding: 80px 0;
+  background: linear-gradient(90.21deg, #f9edad -5.91%, #aa9635 111.58%);
+}
+.education h2 {
+  color: rgb(83, 74, 29);
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-size: 45px;
+}
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.education-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 40px;
+  width: 85%;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.education-item h3 {
+  margin: 0;
+  color: rgb(104, 93, 38);
+  font-size: 28px;
+  font-weight: 800;
+  flex: 1;
+}
+.education-item .duration {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgb(104, 93, 38);
+  padding: 8px 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+  margin-top: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: inline-block;
+}
+.education-item h4 {
+  margin: 0 0 15px 0;
+  font-size: 22px;
+  color: #444;
+  font-weight: 700;
+}
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.gpa-box {
+  display: inline-block;
+  background: rgba(240, 229, 135, 0.6);
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(104, 93, 38, 0.2);
+}
+
+.gpa-box p {
+  margin: 0;
+  color: rgb(104, 93, 38);
+  font-size: 18px;
+  font-weight: bold;
+  background: transparent; /* Override previous p style */
+  padding: 0;
+  border-radius: 0;
+}
+
+.education-item p {
+  /* This was the previous generic p style, keeping it for safety but gpa-box p overrides it */
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/************ Experience Css ************/
+.experience {
+  padding: 0 0 100px 0; /* Removed top padding completely */
+  background-color: #fffef9;
+  background-image: radial-gradient(#e8e3c5 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.experience h2 {
+  color: rgb(83, 74, 29);
+  margin-bottom: 30px; /* Reduced from 50px */
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  font-size: 45px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap between items */
+  align-items: center;
+}
+
+.experience-item {
+  background: #fff;
+  border-radius: 50px;
+  width: 40%; /* Reduced from 50% to 40% */
+  min-width: 300px; /* Ensure it doesn't get too small on mobile */
+  max-width: 500px; /* Force a maximum width */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  border: 1px solid rgba(104, 93, 38, 0.1);
+}
+
+.experience-item.collapsed {
+  height: 60px; /* Reduced height */
+}
+
+.experience-item.expanded {
+  background: #fff;
+  border-radius: 30px;
+  width: 50%; /* Expands to 50% */
+  min-width: 350px;
+  max-width: 600px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-color: rgba(104, 93, 38, 0.3);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px 0 20px; /* Added right padding to prevent overlap with icon */
+  height: 60px; /* Match collapsed height */
+  position: relative;
+}
+
+.experience-header h3 {
+  margin: 0;
+  color: rgb(104, 93, 38);
+  font-size: 18px; /* Slightly smaller font */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  white-space: nowrap; /* Prevent wrapping if possible, or remove if wrapping is desired */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toggle-icon {
+  color: rgb(104, 93, 38);
+  transition: transform 0.3s ease;
+  position: absolute;
+  right: 25px; /* Icon stays on the right */
+}
+
+.experience-content {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  padding: 0 40px;
+}
+
+.experience-item.expanded .experience-content {
+  max-height: 500px; /* Arbitrary large height */
+  opacity: 1;
+  padding-bottom: 40px;
+}
+
+.content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(104, 93, 38, 0.1);
+}
+
+.experience-item h4 {
+  margin: 0;
+  font-size: 22px;
+  color: #444;
+  font-weight: 700;
+}
+
+.duration-badge {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  background: rgb(104, 93, 38);
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.description-box {
+  background: rgba(240, 229, 135, 0.4);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(104, 93, 38, 0.1);
+  width: 100%;
+}
+
+.description-box p {
+  margin: 0;
+  color: rgb(83, 74, 29);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.description-box ul {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.description-box li {
+  color: rgb(83, 74, 29);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.description-box li:last-child {
+  margin-bottom: 0;
+}
+.experience {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+.experience h2 {
+font-size: 45px;
+font-weight: 700;
+}
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.experience-item {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 80%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+.experience-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.experience-item h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+.experience-item .duration {
+  font-size: 16px;
+  color: #666;
+  display: block;
+  margin-bottom: 15px;
+}
+.experience-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+.experience-item p {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+

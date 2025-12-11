@@ -1,10 +1,6 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
@@ -27,64 +23,96 @@ export const Skills = () => {
     }
   };
 
+  const technicalSkills = [
+    { name: "Java", percentage: 90 },
+    { name: "OOps", percentage: 90 },
+    { name: "Full Stack Development", percentage: 90 },
+    { name: "Data Structure and Algorithm", percentage: 90 },
+    { name: "Artificial Intelligence Machine Learning", percentage: 87 },
+    { name: "Deep Learning", percentage: 85 },
+    { name: "Web Application", percentage: 85 },
+    { name: "Software Project Management", percentage: 85 },
+    { name: "ReactJS", percentage: 80 },
+    { name: "NodeJS", percentage: 70 },
+    { name: "EJS", percentage: 60 },
+    { name: "Microsoft Tools", percentage: 77 },
+  ];
+
+  const softSkills = [
+    { name: "Communication Skills", percentage: 95 },
+    { name: "Analytical Thinking", percentage: 87 },
+    { name: "Problem Solving Skills", percentage: 85 },
+    { name: "Leadership", percentage: 85 },
+    { name: "Organization Skills", percentage: 90 },
+  ];
+
+  const SkillItem = ({ name, percentage }) => {
+    const [currentPercentage, setCurrentPercentage] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+      let interval;
+      if (isHovered) {
+        setCurrentPercentage(0);
+        interval = setInterval(() => {
+          setCurrentPercentage((prev) => {
+            if (prev < percentage) {
+              return prev + 1;
+            } else {
+              clearInterval(interval);
+              return percentage;
+            }
+          });
+        }, 15);
+      }
+      return () => clearInterval(interval);
+    }, [isHovered, percentage]);
+
+    const containerStyle = {
+      backgroundImage: isHovered 
+        ? `conic-gradient(#847713 0% ${currentPercentage}%, #e0e0e0da ${currentPercentage}% 100%)`
+        : 'none',
+      transform: isHovered ? 'scale(0.95)' : 'scale(1)',
+      transition: 'transform 0.3s ease-in-out'
+    };
+
+    return (
+      <div 
+        className="item skill-item-card"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="circle-container" style={containerStyle}>
+          <div className="inner-circle">
+            {isHovered ? currentPercentage : percentage}%
+          </div>
+        </div>
+        <h5 className="skill-name">{name}</h5>
+      </div>
+    );
+  };
+
   return (
     <section className="skill" id="skills">
         <div className="container">
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2 style={{ color:"rgb(60, 54, 25)" }}>Skills</h2>
-                        <p>Mastery is not a destination but a continuous journey of learning and improvement.</p>
+                        <h2 className="skill-title">Skills</h2>
+                        <p className="skill-desc">Mastery is not a destination but a continuous journey of learning and improvement.</p>
+                        
+                        <h3 className="skill-subtitle">Technical Skills</h3>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 90%, #e0e0e0da 90% 100%)" }}>
-                                    <div className="inner-circle">90%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}>Full Stack Developement</h5>
-                            </div>
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 90%, #e0e0e0da 90% 100%)" }}>
-                            <div className="inner-circle">90%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}>Data Structure and Algorithm</h5>                                </div>
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 87%, #e0e0e0da 87% 100%)" }}>
-                                    <div className="inner-circle">87%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}>Artificial Intelligence Machine Learning</h5>
-                            </div>
-                            
-                                
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 85%, #e0e0e0da 85% 100%)" }}>
-                                    <div className="inner-circle">85%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}>Web Application</h5>
-                            </div>
+                            {technicalSkills.map((skill, index) => (
+                                <SkillItem key={index} name={skill.name} percentage={skill.percentage} />
+                            ))}
+                        </Carousel>
 
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 85%, #e0e0e0da 85% 100%)" }}>
-                            <div className="inner-circle">85%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}> Software Project Management</h5>
-                            </div>
-
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 80%, #e0e0e0da 80% 100%)" }}>
-                                    <div className="inner-circle">80%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}>UI/UX Design</h5>
-                            </div>
-
-                            <div className="item">
-                            <div className="circle-container" style={{ backgroundImage: "conic-gradient(#847713 0% 77%, #e0e0e0da 77% 100%)" }}>
-                                    <div className="inner-circle">77%</div>
-                                </div>
-                                <h5 style={{ color:"rgb(60, 54, 25)" }}>Microsoft Tools</h5>
-                            </div>
-                         
-                    
+                        <h3 className="skill-subtitle">Soft Skills</h3>
+                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                            {softSkills.map((skill, index) => (
+                                <SkillItem key={index} name={skill.name} percentage={skill.percentage} />
+                            ))}
                         </Carousel>
                     </div>
                 </div>

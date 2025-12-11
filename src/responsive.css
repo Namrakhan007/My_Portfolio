@@ -1,0 +1,209 @@
+
+/************ Responsive Design ************/
+
+@media (max-width: 767px) {
+  /* Navbar */
+  nav.navbar {
+    padding: 10px 0;
+  }
+  nav.navbar .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  /* Banner */
+  .banner {
+    padding: 150px 0 50px 0;
+  }
+  .banner h1 {
+    font-size: 40px;
+  }
+  .banner p {
+    font-size: 16px;
+    width: 100%;
+  }
+  .banner .tagline {
+    font-size: 16px;
+  }
+
+  /* Skills */
+  .skill-bx {
+    padding: 40px 20px;
+  }
+  .skill-title {
+    font-size: 35px;
+  }
+  .skill .skill-desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .skill-slider {
+    width: 100%;
+  }
+
+  /* Experience */
+  .experience {
+    padding: 0 0 50px 0;
+  }
+  .experience h2 {
+    font-size: 35px;
+  }
+  .experience-item {
+    width: 95%;
+    min-width: auto;
+  }
+  .experience-item.expanded {
+    width: 95%;
+    min-width: auto;
+  }
+  .experience-header {
+    padding: 0 40px 15px 15px;
+  }
+  .experience-header h3 {
+    font-size: 16px;
+  }
+  .toggle-icon {
+    right: 15px;
+  }
+  .experience-content {
+    padding: 0 20px;
+  }
+  .experience-item.expanded .experience-content {
+    padding-bottom: 20px;
+  }
+  .experience-item h4 {
+    font-size: 18px;
+  }
+  .description-box p, .description-box li {
+    font-size: 15px;
+  }
+
+  /* Education */
+  .education {
+    padding: 40px 0;
+  }
+  .education h2 {
+    font-size: 35px;
+  }
+  .education-item {
+    width: 95%;
+    padding: 20px;
+  }
+  .education-item h3 {
+    font-size: 20px;
+  }
+  .education-item h4 {
+    font-size: 18px;
+  }
+  .education-item p {
+    font-size: 16px;
+  }
+
+  /* Projects */
+  .project {
+    padding: 40px 0;
+  }
+  .project h2 {
+    font-size: 35px;
+  }
+  .project p {
+    width: 100%;
+    font-size: 16px;
+  }
+  .project .nav.nav-pills {
+    width: 100%;
+  }
+  .project .nav.nav-pills .nav-link {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 40px 0 100px 0;
+  }
+  .contact h2 {
+    font-size: 35px;
+  }
+  .contact img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* Newsletter & Footer */
+  .newsletter-bx {
+    padding: 40px 20px;
+    margin-top: -80px;
+    margin-bottom: 40px;
+  }
+  .newsletter-bx h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .new-email-bx {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .new-email-bx input {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .new-email-bx button {
+    width: 100%;
+    padding: 15px;
+  }
+  .footer {
+    padding: 0 0 30px 0;
+  }
+  .footer img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .footer p {
+    text-align: center;
+  }
+  .social-icon {
+    margin: 0 5px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Banner */
+  .banner {
+    padding: 200px 0 80px 0;
+  }
+  .banner h1 {
+    font-size: 50px;
+  }
+  
+  /* Skills */
+  .skill-bx {
+    padding: 60px 40px;
+  }
+
+  /* Experience */
+  .experience-item {
+    width: 80%;
+  }
+  .experience-item.expanded {
+    width: 85%;
+  }
+
+  /* Projects */
+  .project .nav.nav-pills {
+    width: 90%;
+  }
+  
+  /* Newsletter */
+  .newsletter-bx {
+    padding: 60px 50px;
+  }
+  .new-email-bx button {
+    padding: 20px 40px;
+  }
+}
