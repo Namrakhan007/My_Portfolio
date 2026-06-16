@@ -4,18 +4,22 @@
 @media (max-width: 767px) {
   /* Navbar */
   nav.navbar {
-    padding: 10px 0;
+    width: calc(100% - 24px);
+    top: 10px;
+    padding: 8px 14px;
+    border-radius: 40px;
   }
   nav.navbar .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(18, 16, 4, 0.97);
+    padding: 16px 20px;
+    border-radius: 20px;
     margin-top: 10px;
+    border: 1px solid rgba(210, 185, 70, 0.15);
   }
 
   /* Banner */
   .banner {
-    padding: 150px 0 50px 0;
+    padding: 140px 0 200px 0; /* extra bottom room so wave doesn't cover Resume button */
   }
   .banner h1 {
     font-size: 40px;
@@ -24,13 +28,44 @@
     font-size: 16px;
     width: 100%;
   }
+
+  /* Download Resume — shrink title and button on mobile */
+  .resume-title {
+    font-size: 28px !important;
+    text-align: center;
+  }
+  .resume-download-btn {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Wave — shorter on mobile so it doesn't swallow content */
+  .banner-wave-bottom {
+    height: 100px;
+  }
+
+  /* Corner brackets — smaller and tighter on mobile */
+  .corner-bracket {
+    width: 100px;
+    height: 100px;
+  }
+  .corner-bracket--tr {
+    top: 60px;
+    right: 16px;
+  }
+  .corner-bracket--bl {
+    bottom: 20px;
+    left: 16px;
+  }
   .banner .tagline {
     font-size: 16px;
   }
 
   /* Skills */
   .skill-bx {
-    padding: 40px 20px;
+    padding: 80px 20px 50px;
+    margin-top: 0;
+    border-radius: 20px;
   }
   .skill-title {
     font-size: 35px;
@@ -175,15 +210,30 @@
 @media (min-width: 768px) and (max-width: 991px) {
   /* Banner */
   .banner {
-    padding: 200px 0 80px 0;
+    padding: 200px 0 190px 0; /* extra bottom clears the 160px wave */
   }
   .banner h1 {
     font-size: 50px;
   }
-  
+
+  /* Corner brackets — medium size on tablet */
+  .corner-bracket {
+    width: 150px;
+    height: 150px;
+  }
+  .corner-bracket--tr {
+    top: 80px;
+    right: 24px;
+  }
+  .corner-bracket--bl {
+    bottom: 30px;
+    left: 24px;
+  }
+
   /* Skills */
   .skill-bx {
-    padding: 60px 40px;
+    padding: 100px 40px 60px;
+    margin-top: -60px;
   }
 
   /* Experience */

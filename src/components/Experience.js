@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -6,6 +6,17 @@ import { PlusCircle, DashCircle } from 'react-bootstrap-icons';
 
 export const Experience = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const experienceDetails = [
     {
@@ -13,12 +24,9 @@ export const Experience = () => {
       company: "Rawls College of Business, TTU (Management Department)",
       duration: "May 2025 – Current",
       description: [
-        "Graded assignments, quizzes, and projects with accuracy and timely feedback.",
-        "Assisted students and the professor with technical issues related to RaiderCanvas, course tools, and learning platforms.",
-        "Performed data analysis for course performance, grade distribution, and student progress tracking.",
-        "Conducted quality assurance checks on academic materials, ensuring accuracy, clarity, and usability.",
-        "Managed course announcements, updates, and communication to maintain smooth course flow.",
-        "Helped troubleshoot software, login issues, and digital submissions for students."
+        "Served as the technical partner to non-technical faculty stakeholders — listening to operational pain points, translating them into automation solutions, and delivering working Python pipelines that eliminated manual effort in weekly reporting workflows. The same partnership model OpenSesame's AI Champions program relies on.",
+        "Built reusable automation scripts for data processing (CSV cleanup, section merges, rubric-score aggregation) with validation and de-duplication checks — designed to run reliably every week without manual intervention, demonstrating the operational consistency expected of production automation systems.",
+        "Documented all automation workflows clearly so non-technical users could understand outputs and act on them confidently."
       ]
     },
     {
@@ -35,6 +43,15 @@ export const Experience = () => {
         "Contributed to full-stack development, integrated frontend, backend, Rest API and database components, while ensuring data integrity and system reliability.",
         "Optimized development workflows by conducting code reviews, regression, and acceptance testing, reducing post-deployment defects by 40%."
       ]
+    },
+    {
+      role: "Web Developer Intern",
+      company: "Cylsys Software Solution Pvt Ltd, Mumbai, India",
+      duration: "Feb 2022 – Apr 2022",
+      description: [
+        "Built full-stack web applications using Node.js, React.js, and MySQL — designing database schemas, integrating REST APIs, and delivering end-to-end digital solutions; collaborated with product stakeholders to translate requirements into working features.",
+        "Performed database maintenance and normalization for the Online Healthcare Management System — structuring patient data across relational tables to eliminate redundancy, ensure data integrity, and improve accessibility; documented the schema design and communicated data structure decisions clearly to the product team."
+      ]
     }
   ];
 
@@ -43,21 +60,25 @@ export const Experience = () => {
   };
 
   return (
-    <section className="experience" id="experience">
+    <section className="experience" id="experience" ref={sectionRef}>
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Experience</h2>
-                  <div className="experience-list">
-                    {experienceDetails.map((exp, index) => (
-                      <div 
-                        key={index} 
-                        className={`experience-item ${expandedIndex === index ? 'expanded' : 'collapsed'}`}
-                        onClick={() => toggleExperience(index)}
-                      >
+            <div>
+              <h2>Experience</h2>
+              <div className="experience-list">
+                {experienceDetails.map((exp, index) => {
+                  const fromLeft = index % 2 === 0;
+                  const slideClass = visible
+                    ? `exp-slide-in ${fromLeft ? 'exp-from-left' : 'exp-from-right'}`
+                    : `exp-slide-hidden ${fromLeft ? 'exp-offscreen-left' : 'exp-offscreen-right'}`;
+                  return (
+                    <div
+                      key={index}
+                      className={`experience-item ${expandedIndex === index ? 'expanded' : 'collapsed'} ${slideClass}`}
+                      style={{ animationDelay: visible ? `${index * 0.2}s` : '0s' }}
+                      onClick={() => toggleExperience(index)}
+                    >
                         <div className="experience-header" style={{ paddingBottom: '50px' }}>
                             <h3>{exp.role}</h3>
                             <span className="toggle-icon">
@@ -83,11 +104,10 @@ export const Experience = () => {
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    );
+                  })}
                 </div>
-              }
-            </TrackVisibility>
+              </div>
           </Col>
         </Row>
       </Container>

@@ -1,9 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
+  const bxRef = useRef(null);
+  const [boxVisible, setBoxVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setBoxVisible(true); observer.disconnect(); } },
+      { threshold: 0.05 }
+    );
+    if (bxRef.current) observer.observe(bxRef.current);
+    return () => observer.disconnect();
+  }, []);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -97,23 +108,27 @@ export const Skills = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2 className="skill-title">Skills</h2>
-                        <p className="skill-desc">Mastery is not a destination but a continuous journey of learning and improvement.</p>
-                        
-                        <h3 className="skill-subtitle">Technical Skills</h3>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            {technicalSkills.map((skill, index) => (
-                                <SkillItem key={index} name={skill.name} percentage={skill.percentage} />
-                            ))}
-                        </Carousel>
+                    <div ref={bxRef} className={`skill-bx${boxVisible ? ' skill-bx--visible' : ''}`}>
+                        <h2 className="skill-title skill-anim-item" style={boxVisible ? { animationDelay: '1.2s' } : {}}>Skills</h2>
+                        <p className="skill-desc skill-anim-item" style={boxVisible ? { animationDelay: '1.5s' } : {}}>Mastery is not a destination but a continuous journey of learning and improvement.</p>
 
-                        <h3 className="skill-subtitle">Soft Skills</h3>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            {softSkills.map((skill, index) => (
-                                <SkillItem key={index} name={skill.name} percentage={skill.percentage} />
-                            ))}
-                        </Carousel>
+                        <h3 className="skill-subtitle skill-anim-item" style={boxVisible ? { animationDelay: '1.8s' } : {}}>Technical Skills</h3>
+                        <div className="skill-anim-item" style={boxVisible ? { animationDelay: '2.1s' } : {}}>
+                          <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                              {technicalSkills.map((skill, index) => (
+                                  <SkillItem key={index} name={skill.name} percentage={skill.percentage} />
+                              ))}
+                          </Carousel>
+                        </div>
+
+                        <h3 className="skill-subtitle skill-anim-item" style={boxVisible ? { animationDelay: '2.4s' } : {}}>Soft Skills</h3>
+                        <div className="skill-anim-item" style={boxVisible ? { animationDelay: '2.7s' } : {}}>
+                          <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                              {softSkills.map((skill, index) => (
+                                  <SkillItem key={index} name={skill.name} percentage={skill.percentage} />
+                              ))}
+                          </Carousel>
+                        </div>
                     </div>
                 </div>
             </div>

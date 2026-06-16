@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import logo from './logo.svg';
 import './App.css';
 import './responsive.css';
 import './dark-theme.css';
@@ -12,6 +11,8 @@ import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { PageIntro } from "./components/PageIntro";
+import { ButterflyPointer } from "./components/ButterflyPointer";
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -21,11 +22,14 @@ function App() {
   };
 
   useEffect(() => {
-    document.body.className = theme;
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
   }, [theme]);
 
   return (
     <div className={`App ${theme}`}>
+      <PageIntro />
+      <ButterflyPointer />
       <NavBar theme={theme} toggleTheme={toggleTheme} />
       <Banner />
       <Skills />

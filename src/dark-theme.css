@@ -1,5 +1,11 @@
 
 /************ Dark Theme ************/
+
+/* Wave fills — back darkest, mid neutral, front olive khaki accent */
+body.dark .banner-wave-bottom .wave-svg--1 path { fill: #1a1a1a; }
+body.dark .banner-wave-bottom .wave-svg--2 path { fill: #2c2c2c; }
+body.dark .banner-wave-bottom .wave-svg--3 path { fill: #363220; }
+
 body.dark {
   background-color: #212121 !important;
   color: #f1f1f1 !important;

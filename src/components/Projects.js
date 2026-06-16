@@ -1,5 +1,6 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import { ScatteredDeck } from "./ScatteredDeck";
 import projImg1 from "../assets/img/profanity_filter.png";
 import projImg2 from "../assets/img/RAG.png";
 import projImg3 from "../assets/img/weather.png";
@@ -17,6 +18,20 @@ export const Projects = () => {
 
   // Tab 1 projects
   const mainProjects = [
+    {
+      title: "Islamic Roots",
+      description: "A platform that brings the great Lineage together",
+      imgUrl: "https://images.unsplash.com/photo-1604594849809-dfedbc827105?w=600&auto=format&fit=crop",
+      link: "#",
+      badge: "Featured",
+    },
+    {
+      title: "Agent Security Harness",
+      description: "Multi-Stage Evaluation Framework for Prompt Injection Defence in LLM-Based Agents",
+      imgUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&auto=format&fit=crop",
+      link: "#",
+      badge: "Research",
+    },
     {
       title: "KITTI Visual Localization and Trajectory Estimation",
       description: "Computer Vision & Deep Learning",
@@ -80,17 +95,17 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>As Web Developer Lead at the Google Developer Student Club during my undergrad, I led a team organizing tech events, workshops, and hackathons...</p>
+                <p>From AI security research to community platforms — here's a selection of projects I've built across machine learning, web development, and beyond.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">AI & Web</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="second">Games</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="third">Coming Soon</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   
@@ -98,11 +113,7 @@ export const Projects = () => {
                     
                     {/* Tab 1 */}
                     <Tab.Pane eventKey="first">
-                      <Row>
-                        {mainProjects.map((project, index) => (
-                          <ProjectCard key={index} {...project} />
-                        ))}
-                      </Row>
+                      <ScatteredDeck />
                     </Tab.Pane>
 
                     {/* Tab 2 */}
@@ -116,7 +127,10 @@ export const Projects = () => {
 
                     {/* Tab 3 */}
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                      <div className="coming-soon-tab">
+                        <h3>More projects coming soon</h3>
+                        <p>Currently working on exciting new things. Stay tuned!</p>
+                      </div>
                     </Tab.Pane>
                     
                   </Tab.Content>
