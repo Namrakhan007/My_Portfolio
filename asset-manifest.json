@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/My_Portfolio/static/css/main.77be962c.css",
-    "main.js": "/My_Portfolio/static/js/main.b577d5b3.js",
+    "main.css": "/My_Portfolio/static/css/main.829f2745.css",
+    "main.js": "/My_Portfolio/static/js/main.69465897.js",
     "static/js/787.fb771931.chunk.js": "/My_Portfolio/static/js/787.fb771931.chunk.js",
     "static/media/TA Logo.png": "/My_Portfolio/static/media/TA Logo.ca629e227a8123e08826.png",
     "static/media/TutorLogo.png": "/My_Portfolio/static/media/TutorLogo.a53ae6aee89ccdadd10d.png",
@@ -32,12 +32,12 @@
     "index.html": "/My_Portfolio/index.html",
     "static/media/nav-icon1.svg": "/My_Portfolio/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
     "static/media/nav-icon2.svg": "/My_Portfolio/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
-    "main.77be962c.css.map": "/My_Portfolio/static/css/main.77be962c.css.map",
-    "main.b577d5b3.js.map": "/My_Portfolio/static/js/main.b577d5b3.js.map",
+    "main.829f2745.css.map": "/My_Portfolio/static/css/main.829f2745.css.map",
+    "main.69465897.js.map": "/My_Portfolio/static/js/main.69465897.js.map",
     "787.fb771931.chunk.js.map": "/My_Portfolio/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77be962c.css",
-    "static/js/main.b577d5b3.js"
+    "static/css/main.829f2745.css",
+    "static/js/main.69465897.js"
   ]
 }
